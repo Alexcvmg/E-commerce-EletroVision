@@ -14,7 +14,7 @@
             <div class="card-body">
                 <h5 class="card-title">@eletrodomestico.Nome</h5>
                 <p class="card-text">@eletrodomestico.Descricao</p>
-                <a class="btn btn-primary">Ver Mais</a>
+                <a class="btn btn-primary" asp-page="/Detalhes" asp-route-id="@eletrodomestico.EletrodomesticoId">Ver Mais</a>
             </div>
         </div>
 
