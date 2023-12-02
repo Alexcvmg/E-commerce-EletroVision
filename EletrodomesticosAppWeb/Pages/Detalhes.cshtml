@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "eletrodomestico/{slug}/{id:int:min(1)}"
 @model EletrodomesticosAppWeb.Pages.DetalhesModel
 
 <h2 class="my-3">@Model.Eletrodomestico.Nome</h2>
@@ -6,15 +6,24 @@
 <div class="row">
     <div class="col-4">
         <img class="img-fluid rounded" src="@Model.Eletrodomestico.ImagemUri">
-    </div>
+    </div> 
     <div class="col-6">
         <h4 class="my-3">Sobre:</h4>
         <p>@Model.Eletrodomestico.Descricao</p>
         <h4 class="my-3">Mais Info:</h4>
         <ul>
-            <li>Preço: @Model.Eletrodomestico.Preco</li>
-            <li>Frete Grátis: @Model.Eletrodomestico.FreteGratis</li>
-            <li>Disponível em: @Model.Eletrodomestico.DataCadastro</li>
+            <li>
+                <label asp-for="Eletrodomestico.Preco"></label>
+                @Html.DisplayFor(model => model.Eletrodomestico.Preco)
+            </li>
+            <li>
+                <label asp-for="Eletrodomestico.FreteGratis"></label>
+                @Html.DisplayFor(model => model.Eletrodomestico.FreteGratisFormatado)
+            </li>
+            <li>
+                <label asp-for="Eletrodomestico.DataCadastro"></label>
+                @Html.DisplayFor(model => model.Eletrodomestico.DataCadastro)
+            </li>
         </ul>
         <a class="btn my-3 btn-primary">Editar</a>
     </div>
