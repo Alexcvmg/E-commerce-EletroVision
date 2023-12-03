@@ -2,11 +2,16 @@
 
 namespace EletrodomesticosAppWeb.Servico
 {
-    public class EletrodomesticoService
+    public class EletrodomesticoService : IEletrodomesticoService
     {
-        public IList<Eletrodomestico> ObterTodos()
+        public EletrodomesticoService()
+            => CarregarListaInicial();
+
+        private IList<Eletrodomestico> _eletrodomestico;
+
+        private void CarregarListaInicial() 
         {
-            return new List<Eletrodomestico>()
+            _eletrodomestico = new List<Eletrodomestico>()
         {
             new Eletrodomestico
             {
@@ -45,10 +50,37 @@ namespace EletrodomesticosAppWeb.Servico
             }
         };
         }
+
+        public IList<Eletrodomestico> ObterTodos()
+            => _eletrodomestico; 
         
         public Eletrodomestico Obter(int id)
         {
             return ObterTodos().SingleOrDefault(item => item.EletrodomesticoId == id);
+        }
+
+        public void Incluir(Eletrodomestico eletrodomestico) 
+        {
+            var proximoId = _eletrodomestico.Max(item => item.EletrodomesticoId) + 1;
+            eletrodomestico.EletrodomesticoId = proximoId;
+            _eletrodomestico.Add(eletrodomestico);
+        }
+
+        public void Alterar(Eletrodomestico eletrodomestico) 
+        {
+            var eletrodomesticoEncontrado = _eletrodomestico.SingleOrDefault(item => item.EletrodomesticoId == eletrodomestico.EletrodomesticoId);
+            eletrodomesticoEncontrado.FreteGratis = eletrodomestico.FreteGratis;
+            eletrodomesticoEncontrado.Descricao = eletrodomestico.Descricao;
+            eletrodomesticoEncontrado.Preco = eletrodomestico.Preco;
+            eletrodomesticoEncontrado.DataCadastro = eletrodomestico.DataCadastro;
+            eletrodomesticoEncontrado.ImagemUri = eletrodomestico.ImagemUri;
+            eletrodomesticoEncontrado.Nome = eletrodomestico.Nome;
+        }
+
+        public void Excluir(int id) 
+        {
+            var eletrodomesticoEncontrado = Obter(id);
+            _eletrodomestico.Remove(eletrodomesticoEncontrado);
         }
     }
 }

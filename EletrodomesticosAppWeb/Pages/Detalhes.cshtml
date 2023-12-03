@@ -25,7 +25,7 @@
                 @Html.DisplayFor(model => model.Eletrodomestico.DataCadastro)
             </li>
         </ul>
-        <a class="btn my-3 btn-primary">Editar</a>
+        <a class="btn my-3 btn-primary" asp-page="/Edit" asp-route-id="@Model.Eletrodomestico.EletrodomesticoId">Editar</a>
     </div>
 </div>
 

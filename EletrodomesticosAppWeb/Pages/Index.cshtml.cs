@@ -6,12 +6,18 @@ namespace EletrodomesticosAppWeb.Pages;
 
 public class IndexModel : PageModel
 {
+    private IEletrodomesticoService _service;
+    public IndexModel(IEletrodomesticoService service) 
+    {
+        _service = service;
+    }
+
     public IList<Eletrodomestico> ListaEletrodomesticos { get; private set; }
 
     public void OnGet()
     {
-        var service = new EletrodomesticoService();
-        ListaEletrodomesticos = service.ObterTodos();
+        
+        ListaEletrodomesticos = _service.ObterTodos();
     }
 
 }

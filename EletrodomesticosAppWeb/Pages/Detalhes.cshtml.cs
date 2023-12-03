@@ -7,11 +7,25 @@ namespace EletrodomesticosAppWeb.Pages
 {
     public class DetalhesModel : PageModel
     {
-        public Eletrodomestico  Eletrodomestico { get; private set; }
-        public void OnGet(int id)
+        private IEletrodomesticoService _service;
+        public DetalhesModel(IEletrodomesticoService service) 
         {
-            var service = new EletrodomesticoService();
-            Eletrodomestico = service.Obter(id);
+            _service = service;
+        }
+
+        public Eletrodomestico  Eletrodomestico { get; private set; }
+
+        public IActionResult OnGet(int id)
+        {
+
+            Eletrodomestico = _service.Obter(id);
+
+            if (Eletrodomestico == null)
+            {
+                return NotFound();
+            }
+
+            return Page();
         }
     }
 }

@@ -1,12 +1,15 @@
 ﻿@page
-@model EletrodomesticosAppWeb.Pages.CreateModel
+@model EletrodomesticosAppWeb.Pages.EditModel
+
 
 <div class="row pt-5">
     <div class="col-md-4">
         <form method="post">
-            <h4>Alteração de Eletrodoméstico</h4>
+            <h4>Inclusão de Eletrodoméstico</h4>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Eletrodomestico.EletrodomesticoId" />
 
             <div class="form-group">
                 <label asp-for="Eletrodomestico.Nome" class="control-label"></label>
@@ -33,7 +36,7 @@
             </div>
 
             <div class="form-group mt-3 mb-3">
-                <input class="form-check-input" asp-for="Eletrodomestico.FreteGratis" /> 
+                <input class="form-check-input" asp-for="Eletrodomestico.FreteGratis" />
                 <label asp-for="Eletrodomestico.FreteGratis"></label>
             </div>
 
@@ -45,6 +48,7 @@
 
             <div class="form-group mt-4">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
+                <input type="submit" value="Excluir" class="btn btn-danger" asp-page-handler="Exclusao"/>
             </div>
         </form>
     </div>
