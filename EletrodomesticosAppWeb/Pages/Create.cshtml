@@ -1,0 +1,57 @@
+﻿@page
+@model EletrodomesticosAppWeb.Pages.CreateModel
+
+<div class="row pt-5">
+    <div class="col-md-4">
+        <form method="post">
+            <h4>Inclusão de Eletrodoméstico</h4>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Eletrodomestico.Nome" class="control-label"></label>
+                <input asp-for="Eletrodomestico.Nome" class="form-control" />
+                <span asp-validation-for="Eletrodomestico.Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Eletrodomestico.Descricao" class="control-label"></label>
+                <input asp-for="Eletrodomestico.Descricao" class="form-control" />
+                <span asp-validation-for="Eletrodomestico.Descricao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Eletrodomestico.ImagemUri" class="control-label"></label>
+                <input asp-for="Eletrodomestico.ImagemUri" class="form-control" />
+                <span asp-validation-for="Eletrodomestico.ImagemUri" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Eletrodomestico.Preco" class="control-label"></label>
+                <input asp-for="Eletrodomestico.Preco" class="form-control" />
+                <span asp-validation-for="Eletrodomestico.Preco" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3 mb-3">
+                <input class="form-check-input" asp-for="Eletrodomestico.FreteGratis" /> 
+                <label asp-for="Eletrodomestico.FreteGratis"></label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Eletrodomestico.DataCadastro" class="control-label"></label>
+                <input asp-for="Eletrodomestico.DataCadastro" class="form-control" />
+                <span asp-validation-for="Eletrodomestico.DataCadastro" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-4">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

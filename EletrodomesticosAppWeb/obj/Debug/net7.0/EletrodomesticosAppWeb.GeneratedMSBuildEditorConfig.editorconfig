@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Alexc\OneDrive\Área de Trabalho\EletrodomesticosAppWeb\EletrodomesticosAppWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Alexc/OneDrive/Área de Trabalho/EletrodomesticosAppWeb/EletrodomesticosAppWeb/Pages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Alexc/OneDrive/Área de Trabalho/EletrodomesticosAppWeb/EletrodomesticosAppWeb/Pages/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWxoZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
