@@ -82,5 +82,10 @@ namespace EletrodomesticosAppWeb.Servico.Memory
             var eletrodomesticoEncontrado = Obter(id);
             _eletrodomestico.Remove(eletrodomesticoEncontrado);
         }
+
+        public IList<Marca> ObterTodasMarcas()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

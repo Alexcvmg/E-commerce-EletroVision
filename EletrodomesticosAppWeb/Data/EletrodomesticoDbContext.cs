@@ -7,6 +7,8 @@ public class EletrodomesticoDbContext : DbContext
 {
     public DbSet<Eletrodomestico> Eletrodomestico { get; set; }
 
+    public DbSet<Marca> Marca { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var config = new ConfigurationBuilder()

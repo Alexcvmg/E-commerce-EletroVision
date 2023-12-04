@@ -47,4 +47,7 @@ public class EletrodomesticoService : IEletrodomesticoService
     {
         return _context.Eletrodomestico.ToList();
     }
+
+    public IList<Marca> ObterTodasMarcas()
+        => _context.Marca.ToList();
 }

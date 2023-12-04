@@ -4,6 +4,7 @@ using EletrodomesticosAppWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EletrodomesticosAppWeb.Data.Migrations
 {
     [DbContext(typeof(EletrodomesticoDbContext))]
-    partial class EletrodomesticoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231204022021_AdicionarTabelaMarca")]
+    partial class AdicionarTabelaMarca
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,9 +47,6 @@ namespace EletrodomesticosAppWeb.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MarcaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -56,8 +56,6 @@ namespace EletrodomesticosAppWeb.Data.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("EletrodomesticoId");
-
-                    b.HasIndex("MarcaId");
 
                     b.ToTable("TBL_Eletrodomestico");
                 });
@@ -77,18 +75,6 @@ namespace EletrodomesticosAppWeb.Data.Migrations
                     b.HasKey("MarcaId");
 
                     b.ToTable("Marca");
-                });
-
-            modelBuilder.Entity("EletrodomesticosAppWeb.Models.Eletrodomestico", b =>
-                {
-                    b.HasOne("EletrodomesticosAppWeb.Models.Marca", null)
-                        .WithMany("Eletrodomesticos")
-                        .HasForeignKey("MarcaId");
-                });
-
-            modelBuilder.Entity("EletrodomesticosAppWeb.Models.Marca", b =>
-                {
-                    b.Navigation("Eletrodomesticos");
                 });
 #pragma warning restore 612, 618
         }

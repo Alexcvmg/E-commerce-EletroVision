@@ -13,4 +13,6 @@ public interface IEletrodomesticoService
     public void Alterar(Eletrodomestico eletrodomestico);
 
     void Excluir(int id);
+
+    IList<Marca> ObterTodasMarcas();
 }
