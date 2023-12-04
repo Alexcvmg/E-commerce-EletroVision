@@ -22,6 +22,7 @@ public class EletrodomesticoService : IEletrodomesticoService
         eletrodomesticoEncontrado.DataCadastro = eletrodomestico.DataCadastro;
         eletrodomesticoEncontrado.FreteGratis = eletrodomestico.FreteGratis;
         eletrodomesticoEncontrado.ImagemUri = eletrodomestico.ImagemUri;
+        eletrodomesticoEncontrado.MarcaId = eletrodomestico.MarcaId;
         _context.SaveChanges();
     }
 

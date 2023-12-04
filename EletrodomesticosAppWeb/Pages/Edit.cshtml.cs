@@ -2,11 +2,13 @@ using EletrodomesticosAppWeb.Models;
 using EletrodomesticosAppWeb.Servico;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EletrodomesticosAppWeb.Pages
 {
     public class EditModel : PageModel
     {
+        public SelectList MarcaOptionItems { get; set; }
         private IEletrodomesticoService _service;
 
         public EditModel(IEletrodomesticoService service)
@@ -22,7 +24,11 @@ namespace EletrodomesticosAppWeb.Pages
 
             Eletrodomestico = _service.Obter(id);
 
-            if(Eletrodomestico == null) 
+            MarcaOptionItems = new SelectList(_service.ObterTodasMarcas(),
+                                            nameof(Marca.MarcaId),
+                                            nameof(Marca.Descricao));
+
+            if (Eletrodomestico == null) 
             {
                 return NotFound();
             }
