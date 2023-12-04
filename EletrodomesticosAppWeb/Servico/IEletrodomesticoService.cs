@@ -15,4 +15,6 @@ public interface IEletrodomesticoService
     void Excluir(int id);
 
     IList<Marca> ObterTodasMarcas();
+
+    Marca ObterMarca(int id);
 }

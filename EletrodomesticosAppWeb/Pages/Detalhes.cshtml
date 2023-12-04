@@ -27,6 +27,14 @@
                 <label asp-for="Eletrodomestico.DataCadastro"></label>
                 @Html.DisplayFor(model => model.Eletrodomestico.DataCadastro)
             </li>
+
+            @if(Model.DescricaoMarca is not null){
+                <li>
+                    <label asp-for="Eletrodomestico.MarcaId"></label>
+                    @Html.DisplayFor(model => model.DescricaoMarca)
+                </li>
+            }
+
         </ul>
         <a class="btn my-3 btn-primary" asp-page="/Edit" asp-route-id="@Model.Eletrodomestico.EletrodomesticoId">Editar</a>
     </div>

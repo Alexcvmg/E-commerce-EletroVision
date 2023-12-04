@@ -8,6 +8,8 @@ namespace EletrodomesticosAppWeb.Pages
     public class DetalhesModel : PageModel
     {
         private IEletrodomesticoService _service;
+        public string DescricaoMarca { get; set; }
+
         public DetalhesModel(IEletrodomesticoService service) 
         {
             _service = service;
@@ -19,6 +21,12 @@ namespace EletrodomesticosAppWeb.Pages
         {
 
             Eletrodomestico = _service.Obter(id);
+
+            if(Eletrodomestico.MarcaId is not null) 
+            {
+                DescricaoMarca = _service.ObterMarca(Eletrodomestico.MarcaId.Value).Descricao;
+            }
+            
 
             if (Eletrodomestico == null)
             {

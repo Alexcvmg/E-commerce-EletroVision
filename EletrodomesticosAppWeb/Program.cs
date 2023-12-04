@@ -1,6 +1,7 @@
 using EletrodomesticosAppWeb.Data;
 using EletrodomesticosAppWeb.Servico;
 using EletrodomesticosAppWeb.Servico.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,9 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
+
+var context = new EletrodomesticoDbContext();
+context.Database.Migrate();
 
 app.UseStaticFiles();
 

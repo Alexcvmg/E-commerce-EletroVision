@@ -87,5 +87,10 @@ namespace EletrodomesticosAppWeb.Servico.Memory
         {
             throw new NotImplementedException();
         }
+
+        public Marca ObterMarca(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
