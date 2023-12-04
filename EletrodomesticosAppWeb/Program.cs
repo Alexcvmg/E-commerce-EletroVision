@@ -1,11 +1,15 @@
+using EletrodomesticosAppWeb.Data;
 using EletrodomesticosAppWeb.Servico;
+using EletrodomesticosAppWeb.Servico.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddSingleton<IEletrodomesticoService, EletrodomesticoService>();
+builder.Services.AddTransient<IEletrodomesticoService, EletrodomesticoService>();
+
+builder.Services.AddDbContext<EletrodomesticoDbContext>();
 
 var app = builder.Build();
 

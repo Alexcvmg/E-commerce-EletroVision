@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EletrodomesticosAppWeb.Models;
 
-
+[Table("TBL_Eletrodomestico")]
 public class Eletrodomestico
 {
     public int EletrodomesticoId { get; set; }

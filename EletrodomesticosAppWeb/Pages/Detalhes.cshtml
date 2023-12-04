@@ -1,5 +1,8 @@
 ﻿@page "eletrodomestico/{slug}/{id:int:min(1)}"
 @model EletrodomesticosAppWeb.Pages.DetalhesModel
+@{
+    ViewData["Title"] = "Página de Detalhes";
+}
 
 <h2 class="my-3">@Model.Eletrodomestico.Nome</h2>
 
