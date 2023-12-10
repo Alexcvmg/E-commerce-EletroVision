@@ -31,7 +31,7 @@ public class Eletrodomestico
     [DisplayFormat(DataFormatString ="{0:MMMM \\de yyyy}")]
     public DateTime DataCadastro { get; set;}
 
-    [DisplayName(displayName: "Marca")]
+    [DisplayName(displayName: "Marca:")]
     public int? MarcaId { get; set; }
 
 }
