@@ -12,7 +12,7 @@
     <header>
        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">EletroVision</a>
+                <a class="navbar-brand" asp-page="/Index">EletroVision</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,17 +30,17 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-page="/Privacy">Privacidade</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Create">Inclusão</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Marcas/Index">Marcas</a>
-                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Create">Inclusão</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Marcas/Index">Marcas</a>
+                            </li>
+                        }
                      </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-sm-2" type="search" placeholder="Pesquisar">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-                    </form>
+                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>

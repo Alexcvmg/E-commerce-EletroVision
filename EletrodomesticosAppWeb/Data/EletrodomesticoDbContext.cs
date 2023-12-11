@@ -1,9 +1,10 @@
 ﻿using EletrodomesticosAppWeb.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace EletrodomesticosAppWeb.Data;
 
-public class EletrodomesticoDbContext : DbContext
+public class EletrodomesticoDbContext : IdentityDbContext
 {
     public DbSet<Eletrodomestico> Eletrodomestico { get; set; }
 

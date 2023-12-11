@@ -1,10 +1,12 @@
 using EletrodomesticosAppWeb.Models;
 using EletrodomesticosAppWeb.Servico;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EletrodomesticosAppWeb.Pages
 {
+    
     public class DetalhesModel : PageModel
     {
         private IEletrodomesticoService _service;

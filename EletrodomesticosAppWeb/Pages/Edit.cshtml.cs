@@ -1,11 +1,13 @@
 using EletrodomesticosAppWeb.Models;
 using EletrodomesticosAppWeb.Servico;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EletrodomesticosAppWeb.Pages
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         public SelectList MarcaOptionItems { get; set; }

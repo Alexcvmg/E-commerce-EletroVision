@@ -36,7 +36,10 @@
             }
 
         </ul>
-        <a class="btn my-3 btn-primary" asp-page="/Edit" asp-route-id="@Model.Eletrodomestico.EletrodomesticoId">Editar</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a class="btn my-3 btn-primary" asp-page="/Edit" asp-route-id="@Model.Eletrodomestico.EletrodomesticoId">Editar</a>
+        }
     </div>
 </div>
 
